@@ -1,0 +1,33 @@
+{
+  "name": "taskmaster",
+  "version": "1.0.0",
+  "description": "Projeto To-Do list TaskMaster ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ferreira-leonardo/taskmaster.git"
+  },
+  "keywords": [
+    "nodejs",
+    "mvcArquiteture",
+    "express",
+    "todolist"
+  ],
+  "author": "Leonardo Ferreira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ferreira-leonardo/taskmaster/issues"
+  },
+  "homepage": "https://github.com/ferreira-leonardo/taskmaster#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

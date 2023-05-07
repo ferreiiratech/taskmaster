@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+.btn-geral{
+  font-size: 1.875rem;
+  border-radius: 30px;
+  padding: 17px 18px 17px 18px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: .5s ease;
+}
+
+:root{
+  --color1: #8B6BE7;
+  --color2: #8b6be780;
+  --color3: #fff;
+
+  --anime1: 30% 70%;
+  --anime2: 28% 72%;
+  --anime3: 26% 74%;
+  --anime4: 24% 76%;
+  --anime5: 22% 78%;
+  --anime6: 20% 80%;
+  --anime7: 18% 82%;
+  --anime8: 15% 85%;
+  --anime9: 12% 88%;
+  --anime10: 10% 90%;
+}
+
+@keyframes btnRegisterAnimation {
+  0% {
+    grid-template-columns: var(--anime1);
+  }
+  10% {
+    grid-template-columns: var(--anime2);
+  }
+  20% {
+    grid-template-columns: var(--anime3);
+  }
+  30% {
+    grid-template-columns: var(--anime4);
+  }
+  40% {
+    grid-template-columns: var(--anime5);
+  }
+  50% {
+    grid-template-columns: var(--anime6);
+  }
+  60% {
+    grid-template-columns: var(--anime7);
+  }
+  70% {
+    grid-template-columns: var(--anime8);
+  }
+  80% {
+    grid-template-columns: var(--anime9);
+  }
+  90% {
+    grid-template-columns: var(--anime10);
+  }
+  100% {
+    grid-template-columns: var(--anime10);
+  }
+}
+
+@keyframes btnRegisterAnimationReverso {
+  0% {
+    grid-template-columns: var(--anime10);
+  }
+  10% {
+    grid-template-columns: var(--anime9);
+  }
+  20% {
+    grid-template-columns: var(--anime8);
+  }
+  30% {
+    grid-template-columns: var(--anime7);
+  }
+  40% {
+    grid-template-columns: var(--anime6);
+  }
+  50% {
+    grid-template-columns: var(--anime5);
+  }
+  60% {
+    grid-template-columns: var(--anime4);
+  }
+  70% {
+    grid-template-columns: var(--anime3);
+  }
+  80% {
+    grid-template-columns: var(--anime2);
+  }
+  90% {
+    grid-template-columns: var(--anime1);
+  }
+  100% {
+    grid-template-columns: var(--anime1);
+  }
+}
+
+main{
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  background-color: #8B6BE7;
+}
+
+.div-login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0 35px 35px 0;
+  background-color: var(--color3); 
+}
+
+#firt-h1{
+  margin-top: 6.4rem;
+}
+
+#firt-h1, #second-h1{
+  color: var(--color1);
+  font-size: 3rem;
+  text-align: center;
+}
+
+#second-h1{
+  font-weight: 100;
+  font-size: 3.5rem;
+}
+
+.form-login{
+  display: flex;
+  flex-direction: column;
+  margin-top: 13.0625rem;
+}
+
+.form-login div{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-login div:first-of-type{
+  margin-bottom: 2.5rem;
+}
+
+.form-login input {
+  color: var(--color1);
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 21rem;
+  margin: 0 auto;
+  border: none;
+  border-bottom: 2px solid var(--color1);
+  background-color: transparent;
+  padding: 10px 0 0;
+  outline: none;
+  position: relative;
+}
+
+.form-login label{
+  color: var(--color1);
+  font-size: 1.1rem;
+  left: 7.6rem;
+  position: absolute;
+  transition: .5s ease-in-out;
+  background-color: transparent;
+}
+
+.form-login input:focus ~ label,
+.form-login input:valid ~ label{
+  font-size: .9rem;
+  transform: translateY(-1.2rem);
+}
+
+.btn-login{
+  color: var(--color3);
+  margin: 12.75rem 12rem 0;
+  background-color: var(--color1);
+}
+
+.btn-login:hover{
+  color: var(--color1);
+  background-color: var(--color3);
+  border-color: var(--color1);
+}
+
+.div-home-cadastro{
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-page{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin: 5.625rem 0 0 6.875rem;
+}
+
+.logo-page h1{
+  font-size: 6.25rem;
+  font-weight: 400;
+  color: var(--color3);
+}
+
+.logo-page img{
+  width: 11rem;
+}
+
+.div-home-cadastro p{
+  color: var(--color3);
+  font-size: 2.125rem;
+  margin: 5.375rem 0 0 7.8rem;
+  width: 75rem;
+}
+
+.div-home-cadastro > img{
+  width: 61.8125rem;
+  margin: 8.375rem 0 0 6.875rem;
+}
+
+.btn-register{
+  color: var(--color1);
+  height: 70px;
+  width: 255px;
+  margin: 10.3125rem 0 0 6.875rem;
+  background-color: var(--color3);
+}
+
+.btn-register:hover{
+  color: var(--color3);
+  border-color: var(--color3);
+  background-color: transparent;
+}

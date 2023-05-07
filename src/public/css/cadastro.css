@@ -1,0 +1,110 @@
+.form-cadastro{
+    display: none;
+    flex-direction: column;
+    margin-top: 4.625rem; 
+}
+
+.form-cadastro div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4.625rem;
+}
+
+.form-cadastro input {
+    color: var(--color3);
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 30rem;
+    left: 8rem;
+    border: none;
+    border-bottom: 2px solid var(--color3);
+    background-color: transparent;
+    padding: 10px 0 0;
+    outline: none;
+    position: relative;
+}
+
+.label-text{
+    color: var(--color3);
+    font-size: 1.5625rem;
+    left: 20rem;
+    position: absolute;
+    transition: .5s ease-in-out;
+    background-color: transparent;
+}
+
+.form-cadastro input:focus ~ label,
+.form-cadastro input:valid ~ label{
+    font-size: .9rem;
+    transform: translateY(-1.2rem);
+}
+
+.btn-confirmar{
+    color: var(--color1);
+    margin-left: 7.5rem;
+}
+
+.btn-cancelar{
+    color: var(--color1);
+    margin-left: 4rem;
+}
+
+.btn-confirmar:hover, .btn-cancelar:hover{
+    color: var(--color3);
+    border-color: var(--color3);
+    background-color: transparent;
+}
+
+#div-btns{
+    display: block;
+    margin-top: -6rem;
+}
+
+.div-upl-img{
+    background-color: red;
+}
+
+#image-input{
+    display: none;
+}
+
+.img-profile{
+    width: 300px;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-image: url('../img/profile.svg');
+    background-color: white;
+    background-position: center;
+    background-size: cover;
+}
+
+.bi-person{
+    color: var(--color1);
+    font-size: 10rem;
+}
+
+.label-cadastro{
+    color: white;
+    font-size: 1.5rem;
+    padding: 17px 18px 17px 18px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: .5s ease;
+    margin-top: -4rem;
+}
+
+.label-cadastro:hover{
+    text-decoration: underline;
+}
+
+.div-input-image{
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    left: 60rem;
+    display: flex;
+    align-items: center;
+}

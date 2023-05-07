@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.svg" type="image/x-icon">
+
+    <!-- link bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- links css -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <title>TaskMaster</title>
+</head>
+<body>
+    <main>
+        <div class="div-login">
+            <h1 id="firt-h1">Entre na sua</h1>
+            <h1 id="second-h1">TaskMaster</h1>
+            <form action="" class="form-login">
+                <div class="area-email">
+                    <input type="email" name="input-email" id="input-email" required>
+                    <label for="input-email">E-mail</label>
+                </div>                
+                <div class="area-pass">
+                    <input type="password" name="input-pass" id="input-pass" required>
+                    <label for="input-pass">Senha</label>
+                </div>
+                <button type="submit" class="btn-geral btn-login">
+                    Login <i class="bi bi-box-arrow-in-right"></i>
+                </button>
+            </form>
+        </div>
+        <div class="div-home-cadastro">
+            <aside class="logo-page">
+                <h1>TaskMaster</h1>
+                <img src="img/logo-page.svg" alt="">
+            </aside>
+            <p>Otimize sua produtividade com o TaskMaster! Cadastre-se agora e comece a organizar suas tarefas diárias de maneira simples e intuitiva.</p>
+            <img src="img/img-task.svg" alt="">
+            <button class="btn-geral btn-register">
+                Cadastre-se
+                <i class="bi bi-chevron-right"></i>
+            </button>
+            <form action="" class="form-cadastro">
+                <div class="div-input-geral">
+                    <div>
+                        <div>
+                            <input type="text" name="input-name-cad" required>
+                            <label for="input-name-cad" class="label-text">Nome</label>
+                        </div>
+                        <div>
+                            <input type="email" name="input-email-cad" required>
+                            <label for="input-email-cad" class="label-text">E-mail</label>
+                        </div>
+                        <div>
+                            <input type="password" name="input-pass-cad" required>
+                            <label for="input-pass-cad" class="label-text">Senha</label>
+                        </div>
+                        <div>
+                            <input type="password" name="input-pass-cad-conf" required>
+                            <label for="input-pass-cad-conf" class="label-text">Confirme sua senha</label>
+                        </div>
+                    </div>
+                    <div class="div-input-image">
+                        <div class="img-profile">
+                            <!-- <i class="bi bi-person"></i> -->
+                        </div>
+                        <label for="image-input" class="label-cadastro">
+                            Anexe sua foto
+                            <i class="bi bi-upload"></i>
+                        </label>
+                        <input type="file" name="image-input" id="image-input" accept="image/*">
+                    </div>
+                </div>
+                <div id="div-btns">
+                    <button type="submit" class="btn-geral btn-confirmar">
+                        Confirmar
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                    <button class="btn-geral btn-cancelar" type="reset">
+                        Cancelar
+                        <i class="bi bi-x-circle"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="js/cadastro.js"></script>
+</body>
+</html>
