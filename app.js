@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
-const routes = require("./src/routes/routes")
+const database = require("./src/database/db");
+const routes = require("./src/routes/routes");
 
 const app = express();
 
@@ -12,6 +13,6 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "src/public")));
 
 // config rotas
-app.use(routes)
+app.use(routes);
 
-module.exports = app
+module.exports = app;
