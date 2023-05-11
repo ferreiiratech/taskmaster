@@ -1,4 +1,5 @@
 const database = require("../database/db");
+const { hash } = require('bcrypt')
 const COLUMNS = ["name", "email", "password", "img_profile"];
 
 const registerUserDatabase = (values) => {
@@ -20,12 +21,14 @@ const verifyUser = async (email) => {
 
 const validateUser = async (req, res) => {
   try {
-    const {
+    let {
       "input-name-cad": name,
       "input-email-cad": email,
       "input-pass-cad": password,
     } = req.body;
 
+    password = await hash(password, 8)
+    
     const img_profile = req.file.path.replace(/\\/g, "\\\\");
 
     const emailExists = await verifyUser(email);
