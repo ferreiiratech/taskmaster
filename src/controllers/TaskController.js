@@ -5,9 +5,9 @@ const rootControll = (req, res) => {
 };
 
 const registerUser = async (req, res) => {
-  const resposta = await model.validateUser(req, res);
+  const { msg, status } = await model.validateUser(req, res);
 
-  res.send(resposta);
+  res.status(status).json(msg)
 
   //   console.log(req.file.path);
 };

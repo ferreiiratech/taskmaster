@@ -34,7 +34,7 @@ const validateUser = async (req, res) => {
     const emailExists = await verifyUser(email);
 
     if (emailExists[0]) {
-      return "Email está em uso. Escolha outro";
+      return {msg: 'Email está em uso. Escolha outro', status: 409}
     } else {
       const values = [
         `'${name}'`,
@@ -43,11 +43,11 @@ const validateUser = async (req, res) => {
         `'${img_profile}'`,
       ];
       registerUserDatabase(values);
-      return "Cadastro realizado com sucesso";
+      return {msg: 'Cadastro realizado com sucesso', status: 200};
     }
   } catch (error) {
     console.log(error);
-    res.send("Ocorreu um erro ao realizar o cadastro");
+    return {msg: 'Ocorreu um erro ao realizar o cadastro, tente novamente', status: 500}
   }
 };
 

@@ -12,6 +12,9 @@ app.set("view engine", "ejs");
 // config local arquivos frontend
 app.use(express.static(path.join(__dirname, "src/public")));
 
+// config json response
+app.use(express.json())
+
 // config rotas
 app.use(routes);
 

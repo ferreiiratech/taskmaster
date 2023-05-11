@@ -1,7 +1,13 @@
 const Sequelize = require("sequelize");
+require("dotenv").config();
 
-const database = new Sequelize("taskmaster_db", "admin", "#17200118", {
-  host: "databasecentral.cpqhl5dxjiin.sa-east-1.rds.amazonaws.com",
+const DB = process.env.DATA_DB;
+const USER = process.env.USER_DB;
+const PASSWORD = process.env.PASS_DB;
+const HOST = process.env.HOST_DB;
+
+const database = new Sequelize(DB, USER, PASSWORD, {
+  host: HOST,
   dialect: "mysql",
 });
 
