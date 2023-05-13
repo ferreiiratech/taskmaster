@@ -1,16 +1,62 @@
 const Sequelize = require("sequelize");
 require("dotenv").config();
 
-const DB = process.env.DATA_DB;
-const USER = process.env.USER_DB;
-const PASSWORD = process.env.PASS_DB;
+const DATABASE = process.env.DATABASE_DB;
+const USERNAME = process.env.USERNAME_DB;
+const PASSWORD = process.env.PASSWORD_DB;
 const HOST = process.env.HOST_DB;
 
-const database = new Sequelize(DB, USER, PASSWORD, {
+const database = new Sequelize(DATABASE, USERNAME, PASSWORD, {
   host: HOST,
   dialect: "mysql",
 });
 
+const User = database.define("users", {
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+    allowNull: false,
+  },
+  name: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  email: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    unique: true,
+  },
+  password: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  img_profile: {
+    type: Sequelize.STRING,
+    allowNull: true,
+  },
+});
+
+const Task = database.define("tasks", {
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+    allowNull: false,
+  },
+    description: {
+    type: Sequelize.TEXT,
+    allowNull: false,
+  },
+  due_date: {
+    type: Sequelize.DATEONLY,
+    allowNull: false,
+  },
+});
+
+Task.belongsTo(User, { foreignKey: "user_id" });
+
+// verifica conexão
 database
   .authenticate()
   .then(() => {
@@ -20,4 +66,8 @@ database
     console.error("Erro ao conectar ao MySQL:", error);
   });
 
-module.exports = database;
+module.exports = {
+  database, 
+  User,
+  Task,
+}

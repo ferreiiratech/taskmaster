@@ -19,7 +19,7 @@
         <div class="div-login">
             <h1 id="firt-h1">Entre na sua</h1>
             <h1 id="second-h1">TaskMaster</h1>
-            <form action="" class="form-login">
+            <form action="/user" method="post" enctype="application/x-www-form-urlencoded" class="form-login">
                 <div class="area-email">
                     <input type="email" name="input-email" id="input-email" required>
                     <label for="input-email">E-mail</label>
@@ -44,7 +44,7 @@
                 Cadastre-se
                 <i class="bi bi-chevron-right"></i>
             </button>
-            <form action="/register" method="post" enctype="multipart/form-data" class="form-cadastro" >
+            <form action="/auth/register" method="post" enctype="multipart/form-data" class="form-cadastro" >
                 <div class="div-input-geral">
                     <div>
                         <div>
