@@ -5,8 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaskMaster | Home</title>
+    <style>
+        img{
+            width: 200px;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
-    <h1>Você está logado <%= user %></h1>
+    <form action="/taskcreate" method="post">
+        <input type="text" name="task" id="task" placeholder="Qual a sua próxima tarefa">
+        <input type="submit" value="Adicionar">
+    </form>
+
+    <ul>
+        <% tasklist.forEach((element) => { %>
+            <li>
+                <%= element.dataValues.description %>
+            </li>
+        <% }) %>
+    </ul>
+        
+    <img src=<%= img_profile %> alt="Profile Image">
+
 </body>
 </html>

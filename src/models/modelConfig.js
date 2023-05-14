@@ -70,12 +70,8 @@ const validateUserRegister = async (req, res) => {
       return { msg: "Email está em uso. Escolha outro", status: 409 };
     }
 
-    if (!emailExists) {
-      return { msg: "Email está em uso. Escolha outro", status: 409 };
-    }
-
     const values = [name, email, password, img_profile];
-
+    
     registerUserDatabase(values);
     return { msg: "Cadastro realizado com sucesso", status: 201 };
   } catch (error) {

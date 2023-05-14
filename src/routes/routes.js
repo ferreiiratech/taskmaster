@@ -1,18 +1,31 @@
-const router = require('express').Router()
-const multer = require('multer')
-const { storage } = require('../middlewares/multerConfig')
-const authLogin = require('../middlewares/authLogin')
+const router = require("express").Router();
+const multer = require("multer");
+const middleware = require("../middlewares/middleware");
+const TaskController = require("../controllers/TaskController");
 
-const upload = multer({ storage: storage })
+const upload = multer({ storage: middleware.storage });
 
-const TaskController = require('../controllers/TaskController')
+router.get("/", TaskController.rootControll);
 
-router.get('/',  TaskController.rootControll)
+// rota de registro
+router.post("/auth/register", upload.single("image-input"), TaskController.authRegisterUser);
 
-router.post('/auth/register', upload.single('image-input'), TaskController.authRegisterUser)
+// rota de login
+router.post("/user", TaskController.authLoginUser);
 
-router.post('/user', TaskController.authLoginUser)
+// rota de cookie login
+router.get("/user", middleware.authLogin, TaskController.getAllTask);
 
-router.get('/user', authLogin)
+// (req, res) => {
+//     res.render('home')
+// }
 
-module.exports = router
+// rota create task
+router.post('/taskcreate', TaskController.createTaskALL)
+
+// // rota exemplo
+// router.get("/test", middleware.test, (req, res) => {
+//   res.render("test", { msg: "" });
+// });
+
+module.exports = router;

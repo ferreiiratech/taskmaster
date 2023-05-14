@@ -44,13 +44,19 @@ const Task = database.define("tasks", {
     autoIncrement: true,
     allowNull: false,
   },
-    description: {
+  description: {
     type: Sequelize.TEXT,
     allowNull: false,
   },
   due_date: {
     type: Sequelize.DATEONLY,
     allowNull: false,
+    defaultValue: Date.now()
+  },
+  is_done: {
+    type: Sequelize.BOOLEAN,
+    allowNull: false,
+    defaultValue: false,
   },
 });
 
@@ -58,13 +64,13 @@ Task.belongsTo(User, { foreignKey: "user_id" });
 
 // verifica conexão
 database
-  .authenticate()
-  .then(() => {
-    console.log("MySQL conectado");
-  })
-  .catch((error) => {
-    console.error("Erro ao conectar ao MySQL:", error);
-  });
+.authenticate()
+.then(() => {
+  console.log("MySQL conectado");
+})
+.catch((error) => {
+  console.error("Erro ao conectar ao MySQL:", error);
+});
 
 module.exports = {
   database, 
